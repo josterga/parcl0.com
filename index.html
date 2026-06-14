@@ -76,7 +76,16 @@
       display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92);
       z-index: 100; align-items: center; justify-content: center; cursor: zoom-out;
     }
-    #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+    #lightbox img { max-width: 80vw; max-height: 90vh; object-fit: contain; }
+    .lb-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: #555; font-size: 20px;
+      cursor: pointer; padding: 16px; display: flex; align-items: center;
+      transition: color 0.15s; z-index: 1;
+    }
+    .lb-arrow:hover { color: #fff; }
+    .lb-prev { left: 16px; }
+    .lb-next { right: 16px; }
     .back-to-top {
       position: fixed; bottom: 24px; right: 20px; color: #555; font-size: 11px;
       text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
@@ -89,6 +98,32 @@
       text-transform: uppercase; letter-spacing: 0.08em; text-decoration: underline;
     }
     .download-btn:hover { color: #9e9e9e; }
+    #generative-root {
+      width: 100%; max-width: 960px; padding: 0 5%;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .generative-header { width: 100%; text-align: center; padding: 32px 0 0; }
+    .carousel { width: 100%; margin-top: 20px; display: flex; flex-direction: column; align-items: center; }
+    .carousel-track { width: 65%; position: relative; }
+    @media (max-width: 599px) { .carousel-track { width: 100%; } }
+    .carousel-track img { width: 100%; display: none; object-fit: contain; cursor: zoom-in; }
+    .carousel-track img.active { display: block; }
+    .carousel-nav {
+      display: flex; justify-content: center; align-items: center;
+      gap: 20px; margin-top: 12px;
+    }
+    .carousel-btn {
+      background: none; border: none; color: #555; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer;
+      padding: 0;
+    }
+    .carousel-btn:hover { color: #9e9e9e; }
+    .carousel-dots { display: flex; gap: 6px; align-items: center; }
+    .carousel-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: #333; cursor: pointer; transition: background 0.2s;
+    }
+    .carousel-dot.active { background: #fff; }
     @media (max-width: 599px) {
       .project-title, .project-desc { font-size: 15px; }
     }
@@ -127,6 +162,8 @@
       <p class="bio">James Ostergaard is a San Francisco-based artist and creative technologist working with photography, code-based generative art, and print to trace how pervasive infrastructures and technologies imprint on memory and entangle the physical and digital worlds</p>
     </div>
   </div>
+  <hr class="divider divider-heavy" />
+  <div id="generative-root"></div>
   <hr class="divider divider-heavy" />
   <div id="projects-root"></div>
   <div class="spacer-bottom"></div>
