@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     title: 'Packet Pressure',
     slug: 'packet-pressure',
-    description: 'A competitive card game of contested route-building. Routes are shared infrastructure — any player can extend any open route at any time.',
+    description: '<em>Packet Pressure</em> is an original card game about building shared routes and holding the endpoint when they close.',
     year: 2024,
     tags: ['game'],
     url: 'https://packetpressure.com',
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     title: 'Seinfeld Crossword',
     slug: 'seinfeld-crossword',
-    description: 'Seinfeld Crossword invites players to reminisce on the colorful and brilliant vocabulary found in the dialogue spoken by the characters of Seinfeld.',
+    description: '<em>Seinfeld Crossword</em> invites players to reminisce on the colorful and brilliant vocabulary found in the dialogue spoken by the characters of Seinfeld.',
     tags: ['game'],
     images: ['/projects/seinfeld-crossword/crossword.png'],
     pdf: '/projects/seinfeld-crossword/seinfeld-crossword.pdf',
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     title: 'Instagram Filters',
     slug: 'ig-filters',
-    description: 'Augmented reality filters designed and prototyped as a commercial side practice during the COVID-19 pandemic. Clients included dental and medical practices, Cholula Hot Sauce, and Warner Music.',
+    description: 'Collection of Spark AR filters designed and developed as a commercial side practice during the COVID-19 pandemic. Worked with major food and music distribution clients as a design and art consultant — delivering mockups through to published filters used in ad campaigns.',
     tags: ['ar'],
     images: [],
   },
