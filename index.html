@@ -31,19 +31,28 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; background: #000; color: #fff; }
-    body { display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    body { display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding-top: 44px; }
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: #000; display: flex; align-items: center;
+      justify-content: space-between; padding: 14px 16px; height: 44px;
+    }
+    .site-title { color: #fff; font-size: 12px; text-decoration: none; }
+    .site-title:hover { opacity: 0.8; }
     .spacer-top { height: 25vh; flex-shrink: 0; }
     .gif-wrap img { display: block; width: 256px; height: 256px; }
-    .spacer-flex, .spacer-bottom { flex: 1; }
+    .hero { width: 100%; height: calc(100vh - 44px); display: flex; flex-direction: column; align-items: center; }
+    .spacer-flex { flex: 1; }
+    .spacer-bottom { flex: 1; }
     .content { display: flex; flex-direction: column; align-items: center; width: 100%; }
     .bio {
       color: #9e9e9e; text-align: center; line-height: 1.5;
-      padding: 16px 10%; font-size: clamp(12px, 1.2vw, 16px);
+      padding: 16px 10% 48px; font-size: clamp(12px, 1.2vw, 16px);
     }
     @media (max-width: 599px) { .bio { font-size: 14px; } }
     .contact {
-      color: #fff; text-decoration: underline; cursor: pointer;
-      background: none; border: none; padding: 0; font-size: inherit;
+      color: #fff; text-decoration: none; cursor: pointer;
+      background: none; border: none; padding: 0; font-size: 12px;
     }
     .contact:hover { opacity: 0.8; }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
@@ -91,15 +100,20 @@
   </script>
 </head>
 <body>
-  <div class="spacer-top"></div>
-  <div class="gif-wrap">
-    <img src="/assets/vid1.gif" alt="Animated visual artwork of the word parcl0" width="256" height="256" />
-  </div>
-  <div class="spacer-flex"></div>
-  <h1 class="sr-only">parcl0</h1>
-  <div class="content">
-    <p class="bio">James Ostergaard is a San Francisco-based artist and creative technologist working with photography, code-based generative art, print, and sound to trace how pervasive infrastructures and technologies imprint on memory and entangle the physical and digital worlds</p>
+  <header class="site-header">
+    <a href="https://parcl0.com" class="site-title">parcl0</a>
     <button class="contact" id="contact-btn">Contact</button>
+  </header>
+  <div class="hero">
+    <div class="spacer-top"></div>
+    <div class="gif-wrap">
+      <img src="/assets/vid1.gif" alt="Animated visual artwork of the word parcl0" width="256" height="256" />
+    </div>
+    <div class="spacer-flex"></div>
+    <h1 class="sr-only">parcl0</h1>
+    <div class="content">
+      <p class="bio">James Ostergaard is a San Francisco-based artist and creative technologist working with photography, code-based generative art, print, and sound to trace how pervasive infrastructures and technologies imprint on memory and entangle the physical and digital worlds</p>
+    </div>
   </div>
   <hr class="divider divider-heavy" />
   <div id="projects-root"></div>
