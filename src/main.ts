@@ -7,10 +7,10 @@ declare global {
 import { projects, archivedProjects } from './projects';
 
 const generativeImages = [
-  '/assets/generative/line-kaliedscope.gif',
-  '/assets/generative/wavelength-explore.gif',
-  '/assets/generative/tiat-waves-earth-map.gif',
-  '/assets/generative/particle-instance-explore.png',
+  { src: '/assets/generative/line-kaliedscope.gif', alt: 'Yellow-green kaleidoscopic line geometry forming a three-lobed shape against black' },
+  { src: '/assets/generative/wavelength-explore.gif', alt: 'Teal oscillating waveform against black' },
+  { src: '/assets/generative/tiat-waves-earth-map.gif', alt: 'Generative lines tracing wave motion across a mapped surface' },
+  { src: '/assets/generative/particle-instance-explore.png', alt: 'Dense field of instanced particles in pink and teal forming an organic surface' },
 ];
 
 const MAILTO = 'mailto:parcl0@pm.me?subject=Contact%3A%20parcl0';
@@ -130,7 +130,7 @@ function renderGenerative(): void {
     </div>
     <div class="carousel">
       <div class="carousel-track">
-        ${generativeImages.map((src, i) => `<img src="${src}" alt="Generative artwork ${i + 1}" class="${i === 0 ? 'active' : ''}" loading="lazy" />`).join('')}
+        ${generativeImages.map(({ src, alt }, i) => `<img src="${src}" alt="${alt}" class="${i === 0 ? 'active' : ''}" loading="lazy" />`).join('')}
       </div>
       <div class="carousel-nav">
         <button class="carousel-btn" id="carousel-prev">Prev</button>
@@ -158,7 +158,7 @@ function renderGenerative(): void {
   root.querySelector('#carousel-next')?.addEventListener('click', () => go(current + 1));
   dots.forEach(dot => dot.addEventListener('click', () => go(Number(dot.dataset.index))));
 
-  images.forEach(img => img.addEventListener('click', () => openLightbox(img.src, generativeImages)));
+  images.forEach(img => img.addEventListener('click', () => openLightbox(img.src, generativeImages.map(g => g.src))));
 
   const divider = document.createElement('hr');
   divider.className = 'divider divider-light';
@@ -170,6 +170,7 @@ function renderArchive(): void {
   if (!root) return;
 
   root.innerHTML = `
+    <hr class="divider divider-light" />
     <div class="archive-header">
       <div class="project-tags">Archive</div>
     </div>
@@ -179,7 +180,7 @@ function renderArchive(): void {
           ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
           : p.title
         }</div>
-        ${(p.tags && p.tags.length) || p.year ? `<div class="project-tags">${[p.year, ...(p.tags ?? [])].filter(Boolean).join(' / ')}</div>` : ''}
+        ${(p.tags && p.tags.length) || p.year ? `<div class="project-tags archive-tags">${[p.year, ...(p.tags ?? [])].filter(Boolean).join(' / ')}</div>` : ''}
         <p class="project-desc archive-desc">${p.description}</p>
       </div>
     `).join('')}
