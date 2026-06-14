@@ -111,6 +111,23 @@ function closeAnswerKey(): void {
   document.body.style.overflow = '';
 }
 
+function setupBackToTop(): void {
+  const btn = document.createElement('a');
+  btn.href = '#';
+  btn.className = 'back-to-top';
+  btn.textContent = 'Back to top';
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  document.body.appendChild(btn);
+
+  const threshold = window.innerHeight;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > threshold);
+  }, { passive: true });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('contact-btn')?.addEventListener('click', () => {
     window.location.href = MAILTO;
@@ -118,4 +135,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   setupLightbox();
   setupAnswerKeyModal();
+  setupBackToTop();
 });

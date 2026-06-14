@@ -78,9 +78,11 @@
     }
     #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
     .back-to-top {
-      display: block; margin-top: 48px; color: #555; font-size: 11px;
+      position: fixed; bottom: 24px; right: 20px; color: #555; font-size: 11px;
       text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
     }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
     .back-to-top:hover { color: #9e9e9e; }
     .answer-key-btn {
       display: inline-block; margin-top: 10px; color: #555; font-size: 11px;
@@ -149,7 +151,6 @@
   </div>
   <hr class="divider divider-heavy" />
   <div id="projects-root"></div>
-  <a href="#" class="back-to-top">Back to top</a>
   <div class="spacer-bottom"></div>
   <script type="module" src="/src/main.ts"></script>
 </body>
