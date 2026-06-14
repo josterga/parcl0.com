@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     title: 'Packet Pressure',
     slug: 'packet-pressure',
-    description: '<em>Packet Pressure</em> is an original physical card game that turns internet routing into social play. Players build shared paths through a network, hold endpoints, and negotiate when routes collapse. The logic of how packets actually move, made tangible.',
+    description: '<em>Packet Pressure</em> is an original card game that turns internet routing into social play. Players build shared paths through a network, hold endpoints, and negotiate when routes collapse. The logic of how packets actually move, made tangible.',
     year: 2026,
     tags: ['game'],
     url: 'https://packetpressure.com',
