@@ -159,6 +159,10 @@ function renderGenerative(): void {
   dots.forEach(dot => dot.addEventListener('click', () => go(Number(dot.dataset.index))));
 
   images.forEach(img => img.addEventListener('click', () => openLightbox(img.src, generativeImages)));
+
+  const divider = document.createElement('hr');
+  divider.className = 'divider divider-light';
+  root.appendChild(divider);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
