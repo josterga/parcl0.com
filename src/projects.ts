@@ -2,7 +2,7 @@ export interface Project {
   title: string;
   slug: string;
   description: string;
-  year?: number;
+  year?: number | string;
   tags?: string[];
   url?: string;
   images?: string[];
@@ -40,6 +40,15 @@ export const projects: Project[] = [
 ];
 
 export const archivedProjects: Project[] = [
+  {
+    title: 'parclomusic',
+    slug: 'parclomusic',
+    description: 'Lofi music produced and released to Spotify under the parclomusic alias during the COVID-19 pandemic.',
+    year: '2019–2020',
+    tags: ['music'],
+    url: 'https://open.spotify.com/artist/4ADpqFrA7cjcB68WwZdC93',
+    images: [],
+  },
   {
     title: 'Instagram Filters',
     slug: 'ig-filters',
