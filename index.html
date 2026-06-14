@@ -9,18 +9,18 @@
   <link rel="apple-touch-icon" href="/icons/Icon-192.png" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="description" content="parcl0 is James Ostergaard, a San Francisco-based artist and creative technologist working with photography, code-based generative art, and print to trace how pervasive infrastructures and technologies imprint on memory and entangle the physical and digital worlds." />
+  <meta name="description" content="parcl0 is James Ostergaard, a San Francisco-based artist and engineer working with photography, generative code, and print to trace how pervasive infrastructures and technologies imprint on memory." />
   <link rel="canonical" href="https://parcl0.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://parcl0.com/" />
-  <meta property="og:title" content="parcl0 – creative technologist" />
-  <meta property="og:description" content="parcl0 is James Ostergaard, a San Francisco-based artist and creative technologist working with photography, code-based generative art, and print." />
+  <meta property="og:title" content="parcl0 – artist-engineer" />
+  <meta property="og:description" content="parcl0 is James Ostergaard, a San Francisco-based artist and engineer working with photography, generative code, and print." />
   <meta property="og:image" content="https://parcl0.com/icons/Icon-512.png" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="parcl0 – creative technologist" />
-  <meta name="twitter:description" content="parcl0 is James Ostergaard, a San Francisco-based artist and creative technologist working with photography, code-based generative art, and print." />
+  <meta name="twitter:title" content="parcl0 – artist-engineer" />
+  <meta name="twitter:description" content="parcl0 is James Ostergaard, a San Francisco-based artist and engineer working with photography, generative code, and print." />
   <meta name="twitter:image" content="https://parcl0.com/icons/Icon-512.png" />
-  <title>parcl0 – creative technologist</title>
+  <title>parcl0 – artist-engineer</title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZCRTXBLQ9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -65,7 +65,11 @@
       display: flex; flex-direction: column; align-items: center;
     }
     .project { width: 100%; text-align: center; padding: 32px 0 0; }
-    .project-title { color: #fff; font-size: clamp(14px, 1.2vw, 17px); margin-bottom: 2px; }
+    .opportunities {
+      color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+      padding-bottom: 48px;
+    }
+    .project-title { color: #fff; font-size: clamp(14px, 1.2vw, 17px); font-weight: 600; margin-bottom: 2px; }
     .project-title a { color: #fff; text-decoration: underline; }
     .project-title a:hover { opacity: 0.8; }
     .project-tags { color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
@@ -124,6 +128,14 @@
       background: #333; cursor: pointer; transition: background 0.2s;
     }
     .carousel-dot.active { background: #fff; }
+    #archive-root {
+      width: 100%; max-width: 960px; padding: 0 5%;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .archive-header { width: 100%; text-align: center; padding: 32px 0 0; }
+    .archive-title { color: #444 !important; }
+    .archive-title a { color: #444 !important; }
+    .archive-desc { color: #444 !important; }
     @media (max-width: 599px) {
       .project-title, .project-desc { font-size: 15px; }
       .back-to-top { background: #000; padding: 4px 8px; }
@@ -136,8 +148,8 @@
     "name": "James Ostergaard",
     "alternateName": "parcl0",
     "url": "https://parcl0.com",
-    "jobTitle": "Artist, Creative Technologist",
-    "description": "San Francisco-based artist working with photography, code-based generative art, print, and sound.",
+    "jobTitle": "Artist, Engineer",
+    "description": "San Francisco-based artist and engineer working with photography, generative code, and print.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "San Francisco",
@@ -160,12 +172,15 @@
     <div class="spacer-flex"></div>
     <h1 class="sr-only">parcl0</h1>
     <div class="content">
-      <p class="bio">James Ostergaard is a San Francisco-based artist and creative technologist working with photography, code-based generative art, and print to trace how pervasive infrastructures and technologies imprint on memory and entangle the physical and digital worlds</p>
+      <p class="bio">James Ostergaard is a San Francisco-based artist and engineer working with photography, generative code, and print to trace how pervasive infrastructures and technologies imprint on memory</p>
+      <p class="opportunities">Open to commissions, collaborations, and exhibitions</p>
     </div>
   </div>
   <hr class="divider divider-heavy" />
   <div id="generative-root"></div>
   <div id="projects-root"></div>
+  <hr class="divider divider-light" />
+  <div id="archive-root"></div>
   <div class="spacer-bottom"></div>
   <script type="module" src="/src/main.ts"></script>
 </body>

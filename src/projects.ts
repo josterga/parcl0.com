@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     title: 'Packet Pressure',
     slug: 'packet-pressure',
-    description: '<em>Packet Pressure</em> is an original card game about building shared routes and holding the endpoint when they close.',
+    description: '<em>Packet Pressure</em> is an original physical card game that turns internet routing into social play. Players build shared paths through a network, hold endpoints, and negotiate when routes collapse. The logic of how packets actually move, made tangible.',
     year: 2026,
     tags: ['game'],
     url: 'https://packetpressure.com',
@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     title: 'Takeout',
     slug: 'takeout',
-    description: '<em>Takeout</em> is a photographic record of fast food consumption across 2024. Images shot in the car between drive-thru pickup and home document a year of consumption choices.',
+    description: '<em>Takeout</em> is a photographic record of fast food consumption across 2024. Images shot in the car, between drive-thru window and home, accumulate into a portrait of a year spent eating on the move.',
     year: 2025,
     tags: ['zine', 'print'],
     images: ['/projects/takeout/screenshot.png'],
@@ -31,16 +31,19 @@ export const projects: Project[] = [
   {
     title: 'Seinfeld Crossword',
     slug: 'seinfeld-crossword',
-    description: '<em>Seinfeld Crossword</em> tests players on the surprisingly sophisticated vocabulary woven through the show\'s dialogue — words like <em>supercilious</em>, <em>proclivity</em>, and <em>anathema</em> delivered mid-argument or mid-scheme.',
+    description: '<em>Seinfeld Crossword</em> tests players on the surprisingly sophisticated vocabulary woven through the show\'s dialogue: words like <em>supercilious</em>, <em>proclivity</em>, and <em>anathema</em> delivered mid-argument or mid-scheme.',
     year: 2024,
     tags: ['game'],
     images: ['/projects/seinfeld-crossword/crossword.png'],
     pdf: '/projects/seinfeld-crossword/seinfeld-crossword.pdf',
   },
+];
+
+export const archivedProjects: Project[] = [
   {
     title: 'Instagram Filters',
     slug: 'ig-filters',
-    description: 'Collection of Spark AR filters designed and developed as a commercial side practice during the COVID-19 pandemic. Worked with major food and music distribution clients as a design and art consultant — delivering mockups through to published filters used in ad campaigns.',
+    description: 'Collection of Spark AR filters designed and developed as a commercial practice during the COVID-19 pandemic. Worked with food and music distribution clients from mockup through to published filters used in ad campaigns. Spark AR was discontinued by Meta in 2025.',
     year: 2022,
     tags: ['ar'],
     images: [],

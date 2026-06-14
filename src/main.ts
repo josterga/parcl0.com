@@ -4,7 +4,7 @@ declare global {
   interface Window { dataLayer: unknown[]; gtag: (...args: unknown[]) => void; }
 }
 
-import { projects } from './projects';
+import { projects, archivedProjects } from './projects';
 
 const generativeImages = [
   '/assets/generative/line-kaliedscope.gif',
@@ -126,7 +126,7 @@ function renderGenerative(): void {
     <div class="generative-header project">
       <div class="project-title">TouchDesigner</div>
       <div class="project-tags">2024 – present / generative art</div>
-      <p class="project-desc">Ongoing generative visual practice — procedural systems producing pattern, motion, and emergence in real time.</p>
+      <p class="project-desc">Ongoing generative visual practice in TouchDesigner. Procedural systems built around geometry, waveforms, and particle behavior, resolved in real time.</p>
     </div>
     <div class="carousel">
       <div class="carousel-track">
@@ -165,12 +165,34 @@ function renderGenerative(): void {
   root.appendChild(divider);
 }
 
+function renderArchive(): void {
+  const root = document.getElementById('archive-root');
+  if (!root) return;
+
+  root.innerHTML = `
+    <div class="archive-header">
+      <div class="project-tags">Archive</div>
+    </div>
+    ${archivedProjects.map(p => `
+      <div class="project archive-project">
+        <div class="project-title archive-title">${p.url
+          ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
+          : p.title
+        }</div>
+        ${(p.tags && p.tags.length) || p.year ? `<div class="project-tags">${[p.year, ...(p.tags ?? [])].filter(Boolean).join(' / ')}</div>` : ''}
+        <p class="project-desc archive-desc">${p.description}</p>
+      </div>
+    `).join('')}
+  `;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('contact-btn')?.addEventListener('click', () => {
     window.location.href = MAILTO;
   });
   renderGenerative();
   renderProjects();
+  renderArchive();
   setupLightbox();
   setupBackToTop();
 });
