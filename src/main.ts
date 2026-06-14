@@ -19,7 +19,7 @@ function renderProjects(): void {
         ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
         : p.title
       }</div>
-      ${p.tags && p.tags.length ? `<div class="project-tags">${p.tags.join(' / ')}</div>` : ''}
+      ${(p.tags && p.tags.length) || p.year ? `<div class="project-tags">${[p.year, ...(p.tags ?? [])].filter(Boolean).join(' / ')}</div>` : ''}
       <p class="project-desc">${p.description}</p>
       ${p.pdf ? `<a class="download-btn" href="${p.pdf}" download>Download PDF</a>` : ''}
       ${p.images && p.images.length ? `<div class="project-images">${
