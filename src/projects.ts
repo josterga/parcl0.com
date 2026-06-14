@@ -22,6 +22,7 @@ export const projects: Project[] = [
     year: 2024,
     tags: ['game'],
     url: 'https://packetpressure.com',
+    images: ['/projects/packet-pressure/screenshot.png'],
   },
   {
     title: 'Takeout',
