@@ -25,6 +25,7 @@ export const projects: Project[] = [
     description: '<em>Takeout</em> is a photographic record of fast food consumption across 2024. Images shot in the car between drive-thru pickup and home document a year of consumption choices.',
     tags: ['zine', 'print'],
     images: ['/projects/takeout/screenshot.png'],
+    pdf: '/projects/takeout/takeout.pdf',
   },
   {
     title: 'Seinfeld Crossword',
